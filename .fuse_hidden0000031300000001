@@ -1,0 +1,24 @@
+#Journal de bord
+
+## 24 juin 2025
+
+### Exploration de l'observatoire RE2020
+
+L'exploration porte sur les données envoyées par l'observatoire de la RER2020 en mai 2025. Elle se compose des exports par groupe, zone, bâtiments, et opérations des données pour lesquelles il y a eu une Déclaration Attestant l'Achèvement et la Conformité des Travaux (DAACT) depuis la mise en place de la RE2020 (1er janvier 2022) stockés [/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/IN/](ici). Un descriptif succinct des champs nous a également été fourni.
+
+Le fichier traitant des bâtiments contient 80581 lignes et 271 colonnes.
+En nombre et en surface, les maisons individuelles sont très majoritaires [/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/surfaces_par_usage.xlsx](tableau récapitulatif ici) : 97% en nombre, 80% en surface de référence.
+
+####Parenthèse définition des surfaces
+
+La surface de référence est définie, à l'[https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045292850/2022-03-04](annexe de l'article R. 172-4 du code de la construction et de l'habitation), ainsi :
+
+*La surface de référence d'un bâtiment ou d'une partie de bâtiment, noté Sref est :
+
+- Pour un bâtiment ou une partie de bâtiment à usage d'habitation, la surface habitable du bâtiment ou de la partie de bâtiment ;
+
+- Pour les autres cas, la surface utile du bâtiment ou de la partie de bâtiment.
+*
+
+
+L'exploration des données disponibles montre un taux de remplissage très important pour tous les champs
