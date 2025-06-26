@@ -65,12 +65,28 @@ Démarche en trois temps activée :
 - Avoir recours à des régressions Bayesiennes comme montrées par Maxime pour estimer quantités de matières à partir des résultats d'impacts... 
 
 
+## 26 juin 2025
 
+### Lecture des retours feuille de route
 
+Question FJ sur utilisation du stock récent :
+Pour l'instant, la plage de temps considérée est dépendante de la source utilisée et se cale sur réglementations thermiques.
 
+FJ sur incertitudes des méthodes d'impact : limite importante de la caractérisation sans indiquer d'incertitudes, limite inhérente à l'ACV. Benchmark des méthodes qui fournissent des distributions de CF ?
 
+FJ sur prise en compte de l'environnement : intégrer une partie sur comment c'est pris en compte (labels écoquartier, bbca, les outils opérationnels existants aussi : urbanprint notamment)
 
+CR sur les seuils programme : il faudrait une référence qui a du sens, voir travail de marin pellan sur acv bâtiment et budget national carbone ?
 
+CR sur AWARE comme article : oui, petit travail d'actualisation à mener car nouveaux coefficients, voir notamment si effets littoraux existe encore
+
+FJ sur contextualisation possible des archétypes : L'idée est de filtrer selon une zone géographique, un archétype par usage.
+
+FJ sur hypothèse pour paroi : utilisation pourquoi pas de RE2020 ou BDNB.
+
+### Reprise exploration de l'observatoire RE2020
+
+Tentative de détection de corrélation compacité Cef chaud, pas convaincant, jointplot [ici](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/graphs/correlation?/).
 
 
 
