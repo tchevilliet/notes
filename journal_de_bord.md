@@ -89,7 +89,25 @@ FJ sur hypothèse pour paroi : utilisation pourquoi pas de RE2020 ou BDNB.
 Tentative de détection de corrélation compacité Cef chaud, pas convaincant, jointplot [ici](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/graphs/correlation?/).
 
 
+## 8 juillet 2025
 
+### Lecture articles 
+
+#### Sigurdardottir, 2023
+
+ACV d'un quartier neuf à Rekjavik : restreint à la phase pre-use, avec un focus GWP, même si autre indicateurs REciPe calculés. Le plan est divisé en 3 domaines : Bâtiments, autres espaces et réseaux. Le dernier est laissé de côté par manque d'information. Les bâtiments sont projetés à partir d'esquisses architecturales simples pour comptabiliser les matières. On a un archétype unique qui est utilisé pour tous les bâtiments, celui de Heinonen 2016 sur une une "ACV" pre-use d'une résidence multi-étages (attention, ici, pas mention d'archétype ni d'usage de notion d'intensité matériel). Quelques hypothèses supplémentaires sur la couverture, les façades, à partir des documents de planification et des "current trend"... Subdivision des autres espaces en 7 types : routes, chemins piétons, surfaces enherbées, pistes cyclables, parkings végétalisés, cour d'école et parking silo. Ils sont tous la combinaison de market for grass, asphalt, concrete aciers pour le parking. Sur les résultats, on a des différences par types de programme, qui ne sont dus qu'aux différences géométriques si je comprends bien.
+Dans les discussions, mention est faite de la question des durées de vie, en citant principalement Ji 2021 qui présente une approche big data IA, à regarder...
+Évoque la comparaison IO et process-based (lire article saynajoki 2017 sur comparaison pour ACV bâtiment.) Les incertitudes sont évoquées snas être quantifiées (un chiffre est tout de même donné indiquant que le ferraillage des fondations pourrait doubler et augmenter le bilan carbone de 10%).
+
+#### Ruiz-Valero, 2025
+
+Review sur la base de l'idée que les ACV de logement devrait étendre les limites de leur système pour intégrer le bâti, la mobilité quotidienne des résidents, les espaces extérieurs et les réseaux. Trois dénominations proposées en fonction du périmètre spatial et des types d'éléments proposés : ACV standard de logements (un bâtiment), ACV holistique de logements (un bâtiment + mobilité + espaces extérieurs + réseaux), ACV de quartier (plusieurs bâtiments + mobilité + espaces extérieurs + réseaux). Nomenclature claire, mais on peut discuter de l'appellation neighborhood lorsque tous les bâtiments ont le même usage ? C'est un critère que l'on pourrait ajouter pour distinguer ce qu'on appelle ACV de quartier. Rappel sur les approches ACV possibles : process based lorsque l'info est disponible, mais demandeuse en ressource et problème de troncature, IO lorsque données économiques dispo, mais peu spécifiques ; hybrid qui tente de résoudre les deux problèmes de complétude et de spécificité. 
+La durée de vie est évoquée comme paramètre important mais varaible des études. Un graphiques montr une prédominance du 50 ans. Côté quartier, on monte à 100 ans. Idem sur méthode ACV, prédominance des hybrides pour le quartier. 
+Les logiciels utilisés pour la modélisation thermique sont évoqués, EnergyPlus et Pleiades sont évoqués. Pour les données d'espaces extérieurs, de réseaux et de mobilités, la revue confirme que sont utilisés statistiques et proxys.
+
+### Réflexion sur mon modèle
+Penser à construire les process (matériaux, archétypes et projets) pour pouvoir faire analyse de ocntribution par phase du cycle de vie. Mettre par ailleurs des paramètres partout pour les questions de durée de vie, notamment si l'on souhaite un moment voir ce que donne une différentiation des durées de vies de références considérées pour les archétypes...
+A la lecture de Ruiz-Valero sur toutes ces études qui définissent des unités fonctionnelles précises pour être comparables, mais qui choisissent des durées de vie différentes donnent envie d'être clair sur ces sujets et de prendre en compte la DVR comme un pur paramètre de l'étude avec analyse de sensibilité. Par ailleurs, cela donne envie d'intégrer des modèles simples de réseaux et mobilités pour être complet.
 
 
 
