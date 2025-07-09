@@ -102,13 +102,31 @@ Dans les discussions, mention est faite de la question des durées de vie, en ci
 #### Ruiz-Valero, 2025
 
 Review sur la base de l'idée que les ACV de logement devrait étendre les limites de leur système pour intégrer le bâti, la mobilité quotidienne des résidents, les espaces extérieurs et les réseaux. Trois dénominations proposées en fonction du périmètre spatial et des types d'éléments proposés : ACV standard de logements (un bâtiment), ACV holistique de logements (un bâtiment + mobilité + espaces extérieurs + réseaux), ACV de quartier (plusieurs bâtiments + mobilité + espaces extérieurs + réseaux). Nomenclature claire, mais on peut discuter de l'appellation neighborhood lorsque tous les bâtiments ont le même usage ? C'est un critère que l'on pourrait ajouter pour distinguer ce qu'on appelle ACV de quartier. Rappel sur les approches ACV possibles : process based lorsque l'info est disponible, mais demandeuse en ressource et problème de troncature, IO lorsque données économiques dispo, mais peu spécifiques ; hybrid qui tente de résoudre les deux problèmes de complétude et de spécificité. 
-La durée de vie est évoquée comme paramètre important mais varaible des études. Un graphiques montr une prédominance du 50 ans. Côté quartier, on monte à 100 ans. Idem sur méthode ACV, prédominance des hybrides pour le quartier. 
+La durée de vie est évoquée comme paramètre important mais variable des études. Un graphiques montr une prédominance du 50 ans. Côté quartier, on monte à 100 ans. Idem sur méthode ACV, prédominance des hybrides pour le quartier. 
 Les logiciels utilisés pour la modélisation thermique sont évoqués, EnergyPlus et Pleiades sont évoqués. Pour les données d'espaces extérieurs, de réseaux et de mobilités, la revue confirme que sont utilisés statistiques et proxys.
+L'article différencie les objectifs de recherche du cadre standard (optimisation des choix structurels, de matériaux, et mesures d'efficacité énergétique), du cadre holistique (choix de la forme urbaine, maison individuelle vs bâtiment en centre-ville) et du cadre quartier (projets de développement urbain). La différence holistique quartier est ici clairement compliquée à établir : Dans une comparaison bâtiment résidentiel centre-ville / maisons individuelle, l'unité fonctionnelle commune implique d'avoir plusieurs maisons individuelles, ce qui transforme l'étude en étude de quartier selon les définitons de l'article. Le multi-programme semble donc être un critère de définition pertinent pour parler d'ACV de quartier. 
+Régionalisation simplement évoquée comme moyen de rendre plus "représentatif" les résultats.
 
 ### Réflexion sur mon modèle
 Penser à construire les process (matériaux, archétypes et projets) pour pouvoir faire analyse de ocntribution par phase du cycle de vie. Mettre par ailleurs des paramètres partout pour les questions de durée de vie, notamment si l'on souhaite un moment voir ce que donne une différentiation des durées de vies de références considérées pour les archétypes...
 A la lecture de Ruiz-Valero sur toutes ces études qui définissent des unités fonctionnelles précises pour être comparables, mais qui choisissent des durées de vie différentes donnent envie d'être clair sur ces sujets et de prendre en compte la DVR comme un pur paramètre de l'étude avec analyse de sensibilité. Par ailleurs, cela donne envie d'intégrer des modèles simples de réseaux et mobilités pour être complet.
 
 
+## 8 juillet 2025
+
+### Lecture articles 
+
+#### Nematchoua et Reiter, 2019
+
+L'article présente une étude d'écoquartier, son but étant de déterminer "les coûts environnementaux les plus importants". Pour ce faire, les impacts sont traduits en coûts monétaires par la méthode de monétisation MMG (table de conversion issu d'une agence de gestion des déchets de Flandres...) La partie résidentielle uniquement a été modélisée, avec l'UF suivante : "eco-quartier résidentiel de 3,5 ha comprenant [surfaces exactes du projets], hébergeant 220 personnes, étudié sur un cycle de vie de 80 ans et situé à Liège, en Belgique". On voit ici que l'objet étudié est uniquement la géométrie du quartier.Pas de méthode utilisé, mais un ensemble d'indicateurs avec auto-citation pour les réfs en plus de Guinée. L'article semble catastrophique, lecture arrêtée.
+
+#### Dorra et al, 2022
+Introduction claire sur une différence entre évaluation territorial-based et consumption-based qui demande à être précis sur les limites du système.
+
+
+### GT ACV Maxime
+
+Algo supervisés : pb Y =f(X) + e avec X et Y des entrées et sorties connues et e l'erreur aléatoire. pb du sur-ajustement : erreur minimale pour des modèles sur-ajustés.
+Algo non supervisés : on a X mais pas Y. On essaye donc de comprendre la structure de X, on cherche à détecter des groupes par exemple, détecter des anomalies, ou enfin de réduire la dimension du problème. On cherche par exemple g et f tq Z = g(X) et X_estimé = f(Z) et on cherche à minimiser la moyenne quadratique de X - f(g(X).
 
 
