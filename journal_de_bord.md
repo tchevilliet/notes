@@ -121,6 +121,7 @@ A la lecture de Ruiz-Valero sur toutes ces études qui définissent des unités 
 L'article présente une étude d'écoquartier, son but étant de déterminer "les coûts environnementaux les plus importants". Pour ce faire, les impacts sont traduits en coûts monétaires par la méthode de monétisation MMG (table de conversion issu d'une agence de gestion des déchets de Flandres...) La partie résidentielle uniquement a été modélisée, avec l'UF suivante : "eco-quartier résidentiel de 3,5 ha comprenant [surfaces exactes du projets], hébergeant 220 personnes, étudié sur un cycle de vie de 80 ans et situé à Liège, en Belgique". On voit ici que l'objet étudié est uniquement la géométrie du quartier.Pas de méthode utilisé, mais un ensemble d'indicateurs avec auto-citation pour les réfs en plus de Guinée. L'article semble catastrophique, lecture arrêtée.
 
 #### Dorra et al, 2022
+
 Introduction claire sur une différence entre évaluation territorial-based et consumption-based qui demande à être précis sur les limites du système.
 
 
@@ -128,5 +129,27 @@ Introduction claire sur une différence entre évaluation territorial-based et c
 
 Algo supervisés : pb Y =f(X) + e avec X et Y des entrées et sorties connues et e l'erreur aléatoire. pb du sur-ajustement : erreur minimale pour des modèles sur-ajustés.
 Algo non supervisés : on a X mais pas Y. On essaye donc de comprendre la structure de X, on cherche à détecter des groupes par exemple, détecter des anomalies, ou enfin de réduire la dimension du problème. On cherche par exemple g et f tq Z = g(X) et X_estimé = f(Z) et on cherche à minimiser la moyenne quadratique de X - f(g(X).
+
+## 10 juillet 2025
+
+### Lecture articles
+
+#### Schildt et al, 2024
+
+L'objectif est de mieux estimer la quantité de murs intérieurs des bâtiments à une échelle urbaine. Évoque en introduction le format de données CityGML, voir si l'on souhaite/a besoin de se mettre dans ce cadre pour qualifier la maquette (LOD suffit sûrement). 
+Utilisation du terme archétypes pour enrichir les géométries et les modèles de simulations énergétiques.
+Modèle en graphe pour avoir les surfaces de murs intérieurs en fonctions des longueurs, largeurs de pièces et hauteurs d'étages... Cela permet d'avoir cette quantité sur des intervalles de paramètres.
+Des tirages LHS sont faits pour distribution uniforme en faible temps de calcul.
+Cas d'étude sur un quartier de maisons individuelles en Allemagne avec 4 types de maisons. Beaucoup d'informations sont disponibles, l'incertitude n'est vraiment considérée que sur les murs intérieurs. Toutefois, ça permet d'avoir une validation de l'estimation de surfaces de murs (l'estimation semble plutôt mauvaise). Démarche de validation d'inventaire que j'aimerais avoir 
+
+#### Lausselet 2022
+
+ACV hybride pour l'étude d'un écoquartier norvégien, seulement sur les gazs à effet de serre seulement pour phases de production et de construction. Des coefficients hybrid sont calculés pour chaque matière contenu dans cahcun des types de bâtiments. Les coefficients sont construits : 1) en identifiant les process concernés dans ecoinvent, et les secteurs concernés dans EXIOBASE 2) en supprimant les process qui font doublons
+
+### Réflexion sur mon modèle
+
+A la lecture de Schildt 2024, il semble nécessaire de préciser, au moment de la construction des archétypes statistiques leur statut et leur différence avec les archétypes usuellement utilisés dans les simulations énergétiques (les définir en somme) : alors que le terme est souvent utilisé pour désigner un ensemble d'entrées de la simulation (détails géométriques, cractéristiques thermiques, planning d'occupation, etc.) qui sont dépendantes de certaines caractéristiques des bâtiments (années de construction, programme, localisation, etc.), je l'utilise pour désigner directement les quantités de matières et d'énergie associées à ces caractéristiques. 
+
+
 
 
