@@ -148,8 +148,64 @@ ACV hybride pour l'étude d'un écoquartier norvégien, seulement sur les gazs �
 
 ### Réflexion sur mon modèle
 
-A la lecture de Schildt 2024, il semble nécessaire de préciser, au moment de la construction des archétypes statistiques leur statut et leur différence avec les archétypes usuellement utilisés dans les simulations énergétiques (les définir en somme) : alors que le terme est souvent utilisé pour désigner un ensemble d'entrées de la simulation (détails géométriques, cractéristiques thermiques, planning d'occupation, etc.) qui sont dépendantes de certaines caractéristiques des bâtiments (années de construction, programme, localisation, etc.), je l'utilise pour désigner directement les quantités de matières et d'énergie associées à ces caractéristiques. 
+A la lecture de Schildt 2024, il semble nécessaire de préciser, au moment de la construction des archétypes statistiques leur statut et leur différence avec les archétypes usuellement utilisés dans les simulations énergétiques (les définir en somme) : alors que le terme est souvent utilisé pour désigner un ensemble d'entrées de la simulation (détails géométriques, cractéristiques thermiques, planning d'occupation, etc.) qui sont dépendantes de certaines caractéristiques des bâtiments (années de construction, programme, localisation, etc.), je l'utilise pour désigner directement les quantités de matières et d'énergie associées à ces caractéristiques.
 
+## 14 août 2025
+
+### Question à propos RE2020 
+
+Les quantités fournies comptent-elle les renouvellements éventuels ? (Sur les éléments non structurels)
+
+### Lecture articles
+
+#### Stephan et al 2022
+Proposition ambitieuse de cadre pour étude des environnements construits pour tous les acteurs à toutes les échelles en se basant sur une structure de programmation objet. L'introduction cible les problèmes suivants :
+ -  d'abord que les études existantes sont mono disciplinaire, mono-echelle et parfois mono étape.
+ - a l'échelle des bâtiments, 2 problèmes soulignés : la sous estimation des flux élémentaires embodied par les analyses basées sur des procédés (il cite Crawford 2018, islam 2016, majeau bettez 2011, suh 2004); la non intégration des infrastructures nécessaires autour de ces bâtiments, ou encore celle de la mobilité (il cite Stephan et Crawford 2014a, Stephan 2012, 2013 et Stephan & Stephan 2014 et 2016)
+ -  aux échelles quartier et ville : problème majeur, construction depuis des détails, donc usage de valeurs moyennes pour tout un quartier (même valeurs dynamiques parfois, Sartori 2016, Sandberg 2016), donc ne peut être utilisé pour plus petites échelles que celle de la ville ( voir Lanau 2019 qui est cité).
+ 
+##### Methode de construction d'inventaire 
+
+INTERMÉDIAIRES : De la même manière que dans TyPy, sont associés à une géométrie simplifiée (type BD TOPO / LOD 100) des macro-composants ("assemblies"), eux-même reliés à des quantités de matières et d'éléments. Des renouvellements sont considérés sur la période d'étude sur la base de des durées de vie ou "courbes de survie" des éléments ou macro-composants (tirés notamment de Stephan et al 2018).
+
+ÉLÉMENTAIRES : Les flux associés aux matériaux/éléments sont issus d'une approche hybride (Path-Exchange hybrid analysis) dont les coefficients permettent d'accéder à l'énergie, l'eau et les GES embodied. Durant l'exploitation, les consommations de chaud et de froid sont calculés via EnergyPlus, mais on ne sait pas exactement comment. Les consommations d'électriques spécifiques et d'eau sont calculés au ratio par type de bâtiment, planning d'occupation et nombre de systèmes/appareils (mais on ne sait pas comment tout ça pourrait être déterminé à grande échelle)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
