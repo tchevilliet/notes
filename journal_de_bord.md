@@ -168,9 +168,53 @@ Proposition ambitieuse de cadre pour étude des environnements construits pour t
 
 INTERMÉDIAIRES : De la même manière que dans TyPy, sont associés à une géométrie simplifiée (type BD TOPO / LOD 100) des macro-composants ("assemblies"), eux-même reliés à des quantités de matières et d'éléments. Des renouvellements sont considérés sur la période d'étude sur la base de des durées de vie ou "courbes de survie" des éléments ou macro-composants (tirés notamment de Stephan et al 2018).
 
-ÉLÉMENTAIRES : Les flux associés aux matériaux/éléments sont issus d'une approche hybride (Path-Exchange hybrid analysis) dont les coefficients permettent d'accéder à l'énergie, l'eau et les GES embodied. Durant l'exploitation, les consommations de chaud et de froid sont calculés via EnergyPlus, mais on ne sait pas exactement comment. Les consommations d'électriques spécifiques et d'eau sont calculés au ratio par type de bâtiment, planning d'occupation et nombre de systèmes/appareils (mais on ne sait pas comment tout ça pourrait être déterminé à grande échelle)
+ÉLÉMENTAIRES : Les flux associés aux matériaux/éléments sont issus d'une approche hybride (Path-Exchange hybrid analysis) dont les coefficients permettent d'accéder à l'énergie, l'eau et les GES embodied. Durant l'exploitation, les consommations de chaud et de froid sont calculés via EnergyPlus, mais on ne sait pas exactement comment. Les consommations d'électriques spécifiques et d'eau sont calculés au ratio par type de bâtiment, planning d'occupation et nombre de systèmes/appareils (mais on ne sait pas comment tout ça pourrait être déterminé à grande échelle). Les flux élémentaires liés à la mobilité des occupants sont obtenus en mutlipliant les distances moyennes des occupants pour chaque mode de mobilité par les intensités de flux directes et indirectes de ces modes de mobilités. Une séquestration carbone de la végétation et des sols est prise en compte selon méthode de l'US department of energy datant de 1998...
+
+Tous les flux se voient traités de manière dynamique, ie ils disposent d'un indice y et peuvent changer dans le temps. Les valeurs évoluent selon les entrées arbitraires de l'utilisateur et autre scénarios prospectifs. 
+Le modèle sera lié à des SIG : comment ?
+
+##### Méthode de caractérisation
+
+Aucun mot sur les méthodes d'impact. La base utilisée (EPiC Database) ne contient que les flux d'énergie, d'eau et de GES. La base s'appuie sur AusLCI, base australienne de macro-procédés réalisés à partir d'ecoinvent 2.2 pour la partie process-based et sur des tables Input-Output de 2014-15 pour la partie IO.
+
+##### Démarches d'interpretation 
+Les incertitudes sont énoncées très importantes (±40% sur les indicateurs calculés par cette méthode), mais sont exclus de la démarche d'interprétation sous couvert de comparaison de scénarios souffrant des même incertitudes, qui se compenseraient donc... Ce qui est répété en discussion.
+Diagram sankey qui permet analyse de contribution des phase, lots, typologies de bâtiment aux émissions de GES. Diagramme des masses de matériaux et graphe de GES cumulées par an.
 
 
+
+## 18 août 2025
+
+### Présentation Vicente
+
+slide 1 : "de vie de vie"
+slide intro : "créé avec UGE/CNRS"
+slide revue : ne pas laisser entendre que l'ACV permet de quantifier tous ces indices
+slide ACV approche matricielle : f!= flux de référence
+slide ACV ? : rappeler la structure de la présentation sur les slides. ACV multi-critère mais étude mono-critère, pourquoi ? (CIOGEN multi, brightway multi)
+slide brightway : enlever précision
+slide CIOGEN 1 résultats : variation significative ?
+slide CIOGENs : nbre de chiffres significatifs
+slide brightway vs ciogen : pourquoi prioriser, pas immédiat. Comment fin de vie est représenté si contrib négative.
+slide conclusion : souligner ce qu'il faudrait faire pour valider les hypothèses énoncées.
+
+## 19 août 2025
+
+### Création archétypes RE2020
+
+Première exploration des envois avec quantités de matières de la RE2020 dans le fichier [250812_main.py](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/250812_main.py). La table envoyée (enregistrée [là](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/IN/composant_open_data_0525.parquet))contient plus de 6 millions de lignes, pour environ 80 000 bâtiments déclarés achevés, soit en moyenne 75 lignes par bâtiment. Chaque ligne est une quantité : le projet auquel elle appartient est identifiée dans un champ "projet\_id", existant aussi dans les précédentes tables ; le produit auquel elle se rattache est décrit par 5 champs de nomenclature inies :
+
+- niveau 1 : longueur 3 -> Produit de construction, Services ou Équipements
+- niveau 2 : longueur 28 -> lots type Isolation, ou Structure/Gros Oeuvre 
+- niveau 3 : longueur 144 -> sous-lots parfois très précis si lots de faible ampleur (Évier par exemple) ou moins précis si lots importants (Traitement d'air pour Équipements de Génie Climatique ou Dalles et prédalles pour Structure)
+- niveau 4 : longueur 280 -> éléments ou matériaux (Chaudières pour sous-lot "Chauffage et/ou rafraîchissement et/ou production d’eau chaude sanitaire" ou Bois pour sous-lot "Bardages (vêture / vêtage / parement)")
+- niveau 5 : longueur 154 -> précision sur l'élément, très souvent vide (plus de 85% des lignes vides)
+
+_In fine_, 670 nomenclatures uniques apparaissent dans la table. On pourrait donc exprimer tous les bâtiments à partir de celles-ci, à voir tout de même si on ne priorise pas certains lots et sous-lots pour simplifier la modélisation...
+
+On ajoute à la table des quantités des champs importants des tables précédentes (notamment [celle-ci](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/IN/202505_export_batiments_daact.csv)), à savoir l'usage principal (champ "usage\_principal\_1\_txt") et la surface de référence "sref" pour le calcul (voir définition des surfaces plus haut), la jointure se faisant par le champ "projet\_id". On crée un champ de quantités surfaciques ("quant\_surf"). Cette table augmentée est enregistrée [ici](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/quantites_augmentees.parquet) en format parquet.
+
+On peut ensuite extraire/afficher les distributions de valeurs de certains éléments de nomenclatures et tenter de les fitter avec une distribution lognormale comme cet exemple avec le béton armé de fondations pour les maisons individuelles [ici](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/quantités_par_usage_par_nomenclature/Maison individuelle ou accolée_['Fondations '].pdf) et les logements collectifs [là](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/quantités_par_usage_par_nomenclature/Logement collectif_['Fondations '].pdf).
 
 
 
