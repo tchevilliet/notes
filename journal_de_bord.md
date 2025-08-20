@@ -217,14 +217,30 @@ On ajoute à la table des quantités des champs importants des tables précéden
 On peut ensuite extraire/afficher les distributions de valeurs de certains éléments de nomenclatures et tenter de les fitter avec une distribution lognormale comme cet exemple avec le béton armé de fondations pour les maisons individuelles [ici](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/quantités_par_usage_par_nomenclature/Maison individuelle ou accolée_['Fondations '].pdf) et les logements collectifs [là](/home/thibault.chevilliet@enpc.fr/Documents/Obs_RE2020/OUT/quantités_par_usage_par_nomenclature/Logement collectif_['Fondations '].pdf).
 
 
+## 20 août 2025
 
+### Lecture articles
 
+#### Li et Feng, 2025
 
+##### Objectifs et périmètre analyse
+L'article propose un cadre de travail pour des ACV spatialisées des bâtiments existants canadiens, dont l'objectif, illustré dans un cas d'étude, est d'identifier des zones à haut impact environnemental pour y prioriser les réhabilitations et le passage aux énergies renouvelables.
+L'étude évalue les impacts de l'utilisation d'énergie des bâtiments sur tout leur cycle de vie, avec une PER de 60 ans, ainsi que ceux , directs et indirects, des stratégies de rénovations dans certains scénarios. Le cas d'étude est Richmond en Colombie Britannique, au Canada.
+Unité fonctionnelle : m2 de bâtiment. Le flux de référence étant la surface "nette" de plancher. La définiton des intensités d'impact considérée comme une normalisation.
 
+##### Methode de construction d'inventaire 
+5 archétypes sont modélisés (maison individiuelle, maisons mitoyennes "townhouse residential", bâtiment tertiaire, commerce de détail, et bâtiment industriel) sur REVIT. Des intensités matérielles et énergies sont calculées pour chacun, via energyPlus (les caractéristiques thermiques étant fonction de la période de construction) et Revit. Ces intensités sont appliquées à une maquette LOD1 (emprise extrudée par élévation) du territoire étudié pour le scénario BAU. Sont ajoutées à ces intensités les impacts nécessaires à la réhab pour atteindre les objectifs net-zero (PV pour couvrir 100% des besoins annuels en élec, pompe à chaleur partout, et une isolation améliorée pour atteindre les objectifs de consos du net-zéro, rappelés dans l'article) dans le cas du scénario UNZEB.
 
+##### Méthode de caractérisation
+ReciPe est utilisée partiellement : 12 midpoint indicators (sur 18) et 2 endpoint indicators (sur 3). En plus, les demandes d'énergies fossile et issue de la biomasse sont calculées. La raison évoquée est un alignement avec la littérature, dont Mastrucci 2020, qui ne fait que du carbon footprint...
 
-
-
+##### Démarches d'interpretation 
+Les incertitudes sur les indicateurs d'impacts de chacun des archétypes sont fournies via les variances, écarts-types et relative standard deviation estimate. Cependant, il n'est pas dit quelles incertitudes sont propagées dans le modèle ni comment. (On imagine incertitude sur A et B, C a priori n'en a pas puisque ReciPe et quid de l'avant-plan ? a priori rien non plus car résultats par archétype, il n'y a pas de distance à l'archétype à estimer...)
+L'analyse de sensibilité réalisée est ce que Heijungs 2024 appelle une analyse de sensibilité discrète par scénarios ou 8 augmentations de certains paramètres sont considérés et les effets relatifs par rapport à la baseline sont cumulés dans un score. Ne sont commentés que les parts de chacun des scénarios à ce score cumulé, ce qui est très dicutable (la variation du paramètre étant arbitraire, le poids dans ce score ne veut rien dire). 
+La correlation entre indicateurs d'impacts est évaluées par test de Mantel, et une forte corrélation entre GWP, CED-fossil et Acidification terrestre est identifiée, synergie des actions suggérée.
+Un diagramme de sankey est fourni décrivant graphique la contribution des phase, des lots et produits de construction. 
+Hotspot spatiaux permis par GIS
+Les limites identifiées sont : l'usage dans le modèle en temps réel du comportement des occupants, l'absence d'étude en coût global, les incertitudes sur les COP et les données, la variabilité par rapport aux archétypes qui empêche la généralisation 
 
 
 
