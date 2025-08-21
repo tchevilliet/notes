@@ -103,8 +103,8 @@ Dans les discussions, mention est faite de la question des durées de vie, en ci
 
 Review sur la base de l'idée que les ACV de logement devrait étendre les limites de leur système pour intégrer le bâti, la mobilité quotidienne des résidents, les espaces extérieurs et les réseaux. Trois dénominations proposées en fonction du périmètre spatial et des types d'éléments proposés : ACV standard de logements (un bâtiment), ACV holistique de logements (un bâtiment + mobilité + espaces extérieurs + réseaux), ACV de quartier (plusieurs bâtiments + mobilité + espaces extérieurs + réseaux). Nomenclature claire, mais on peut discuter de l'appellation neighborhood lorsque tous les bâtiments ont le même usage ? C'est un critère que l'on pourrait ajouter pour distinguer ce qu'on appelle ACV de quartier. Rappel sur les approches ACV possibles : process based lorsque l'info est disponible, mais demandeuse en ressource et problème de troncature, IO lorsque données économiques dispo, mais peu spécifiques ; hybrid qui tente de résoudre les deux problèmes de complétude et de spécificité. 
 La durée de vie est évoquée comme paramètre important mais variable des études. Un graphiques montr une prédominance du 50 ans. Côté quartier, on monte à 100 ans. Idem sur méthode ACV, prédominance des hybrides pour le quartier. 
-Les logiciels utilisés pour la modélisation thermique sont évoqués, EnergyPlus et Pleiades sont évoqués. Pour les données d'espaces extérieurs, de réseaux et de mobilités, la revue confirme que sont utilisés statistiques et proxys.
-L'article différencie les objectifs de recherche du cadre standard (optimisation des choix structurels, de matériaux, et mesures d'efficacité énergétique), du cadre holistique (choix de la forme urbaine, maison individuelle vs bâtiment en centre-ville) et du cadre quartier (projets de développement urbain). La différence holistique quartier est ici clairement compliquée à établir : Dans une comparaison bâtiment résidentiel centre-ville / maisons individuelle, l'unité fonctionnelle commune implique d'avoir plusieurs maisons individuelles, ce qui transforme l'étude en étude de quartier selon les définitons de l'article. Le multi-programme semble donc être un critère de définition pertinent pour parler d'ACV de quartier. 
+Les logiciels utilisés pour la modélisation thermique sont évoqués, EnergyPlus et Pleiades sont cités. Pour les données d'espaces extérieurs, de réseaux et de mobilités, la revue confirme que sont utilisés statistiques et proxys.
+L'article différencie les objectifs de recherche du cadre standard (optimisation des choix structurels, de matériaux, et mesures d'efficacité énergétique), du cadre holistique (choix de la forme urbaine, maison individuelle vs bâtiment en centre-ville) et du cadre quartier (projets de développement urbain). La différence holistique/quartier est ici clairement compliquée à établir : Dans une comparaison bâtiment résidentiel centre-ville / maisons individuelle, l'unité fonctionnelle commune implique d'avoir plusieurs maisons individuelles, ce qui transforme l'étude en étude de quartier selon les définitons de l'article. Le multi-programme semble donc être un critère de définition pertinent pour parler d'ACV de quartier. 
 Régionalisation simplement évoquée comme moyen de rendre plus "représentatif" les résultats.
 
 ### Réflexion sur mon modèle
@@ -243,11 +243,41 @@ Hotspot spatiaux permis par GIS
 Les limites identifiées sont : l'usage dans le modèle en temps réel du comportement des occupants, l'absence d'étude en coût global, les incertitudes sur les COP et les données, la variabilité par rapport aux archétypes qui empêche la généralisation 
 
 
+## 21 août 2025
 
+### Lecture articles
 
+#### Su et al, 2025
 
+Évoque Pfister 2020 en introduction, qui propose un shapefile global pour la régionalisation à venir des ACV. A déjà identifié l'intérêt des ACV dynamiques (DLCA), et décide d'y incorporer un système multi-agent (MAS).
 
+##### Objectifs et périmètre analyse
+Le but du modèle est l'évaluation dynamique des impacts d'un quartier. Il est annoncé que les impacts considérés sont uniquement ceux ayant lieu dans le périmètre du quartier, mais il a plus l'iar de s'agir d'une étude sur la phase d'usage seulement que d'impacts directs uniquement.
 
+##### Méthode de construction d'inventaire 
+6 agents participent à déterminer l'inventaire (climat, bâtiment, espaces verts, éclairage, mobilité, individus), avec pour chacun d'eux des attributs, déterminés par des données (par exemple météo), des inputs de l'utilisateur et des règles d'interaction entre attributs d'agents différents. Des "flux élémentaires d'avant-plan" (en fait consommations d'énergies et GES directs) sont calculés à l'instant t, multipliés par une intensité d'émissions par type d'énergie à l'instant t, puis sommé sur l'année. Les captations des espaces verts sont déduites des émissions de CO2 calculées.
+
+##### Méthode de caractérisation
+Pas de méthode de caractérisation spécifique utilisée. Quatre catégories d'impacts sont considérées : réchauffement climatique, acidification (on ne sait pas de quoi), eutrophisation (on ne sait pas de quoi) et les particules en suspension. Les facteurs de caractérisation sont issus de Cao 2012 (inaccessible). Une pondération en euros par kilogrammes de polluants est appliquée...
+
+##### Démarches d'interpretation 
+Pas d'analyse de contribution, ni d'incertitudes (le mot n'est écrit nulle part, une des limitations identifiées étant plutôt le manque de données). Pas d'analyse de sensibilité non plus, mais quatre scénarios d'optimisation des usages sont comparés sur la base du score unique pondéré.
+
+#### Famiglietti et al, 2023
+
+##### Objectifs et périmètre
+Le but de l'outil présenté est d'évaluer l'impact des bâtiments (anciens ou neufs, mais existant) à une échelle urbaine par ACV process-based en considérant toutes les phases du cycle. Pour la vie en oeuvre, seuls le remplacement des produits et les consommations d'énergie sont considérées, l'auteur identifiant un manque de données pour les autres modules (maintenance, réparation, réhabilitation ou consommation d'eau).
+
+##### Méthode de construction d'inventaire 
+L'auteur opère une "simplification" l'équation h =CBA-1f en basculant sur h'=A'Q' ou les lignes d'A' sont les éléments de construction (macro-composants par phase) utilisés et les colonnes sont des produits et EF direct utilisés par ces éléments. Les lignes de la matrice Q' sont ces produits et EF, et ses colonnes les catégories d'impact.
+Pour réaliser l'inventaire, des lois empiriques sont établies (polynôme second degré) pour établir la masse de béton armé en fonction du nombre d'étage par exemple. Les quantités de matériaux étant disponibles dans des bases de données. Pour les enveloppes, les quantités de matières sont inférées à partir du U, disponible dans la base évoquée, et du type de bâtiment et des compositions de parois qui lui sont liés. Des donnés moyennes de la littérature sont utilisées pour le transport, l'installation, la démolition/deconstruction et le transpor vers le traitement de fin de vie. ecoinvent 3.9.1 EN15804 est utilisée pour les procédés d'arrière-plan
+
+##### Méthode de caractérisation
+La méthode EF v3.1 est utilisée ainsi que la méthode de demande cumulée d'énergie. Chaque flux intermédiaire et élémentaire du système est directement caractérisé dans la matrice Q'.
+
+##### Démarches d'interpretation 
+
+Les résultats pour Milan sont présentés en tableau oar phase et par élément (analyse de contribution). Les résultats sont comparés à d'autres articles, notamment Trigaux 2020. Une analyse de sensibilité OAT est annoncée dans l'annexe, c'est en fait une DSA au sens d'heijungs sur l'impact de la quantité de béton armé, la nature des isolants considérés et la conductivité des fenêtres sur le gwp, en distinguant le stock entier et les nouvelles constructions. Les résultats (globalement inférieurs à 10% de variations) sont jugés "consistent". Pas d'analyse d'incertitude, mais résultats sur la variabilité intra typologie pour chacun des impacts.
 
 
 
