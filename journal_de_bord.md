@@ -280,11 +280,60 @@ La méthode EF v3.1 est utilisée ainsi que la méthode de demande cumulée d'é
 Les résultats pour Milan sont présentés en tableau oar phase et par élément (analyse de contribution). Les résultats sont comparés à d'autres articles, notamment Trigaux 2020. Une analyse de sensibilité OAT est annoncée dans l'annexe, c'est en fait une DSA au sens d'heijungs sur l'impact de la quantité de béton armé, la nature des isolants considérés et la conductivité des fenêtres sur le gwp, en distinguant le stock entier et les nouvelles constructions. Les résultats (globalement inférieurs à 10% de variations) sont jugés "consistent". Pas d'analyse d'incertitude, mais résultats sur la variabilité intra typologie pour chacun des impacts.
 
 
+#### Long et al, 2024
+
+##### Objectifs et périmètre
+Un modèle "4D GIS-MFA-LCA" est proposé pour identifier la distribution spatiale et temporelle des stocks et des flux de matières, et leurs émissions associées. Objectif pratique : aider à la gestion des ressources matières, notamment au recyclage. L'étude ne se concentre que sur les émissions "incorporées" des materiaux de construction, en ignorant les phase de transport au site et à la mise en oeuvre (du fait d'un manque de données). La phase de vie en oeuvre des bâtiment est ignorée,mais la fin de vie considérée d'après figure (pas extrêmement explicite). Les bâtiments étudiés sont les existants, non patrimoniaux construits entre 1980 et 2020.
+
+##### Méthode de construction d'inventaire 
+Pour chacun des six types de bâtiments (tourisme, résidentiel, public, industriel, commercial et "Ecological reservation") sont établies des intensités matérielles pour 11 matériaux (ciment, bois, brique, graves, sable, argile, verre, asphalte, acier, aluminium et cuivre) d'après revue de la littérature, données empiriques sur site, rapport de l'administration et d'entreprises de construction. Ces intensités diffèrent également selon la période de construction. Le stock d'une année est déduit en multipliant ces intensités par les surfaces, puis les déchets produits sont estimés à partir du stock. Le flux de matière entrant est calculé en comparant les stocks de l'année à l'année précédente, en y ajoutant les déchets (delta stock = entrant - sortant). Les flux élémentaires ne sont pas quantifiés.
+
+##### Méthode de caractérisation
+Les émissions carbone sont obtenues en multipliant les flux entrants par les facteurs de caractérisation carbone de la (CLCD Database, 2015) et en retranchant l'absorption de carbone par les bâtiments béton.
+
+##### Démarches d'interpretation 
+Analyse de contribution des types de bâtiments aux masses de décehts, mais pas à l'impact. Visualition (peu lisible) de la distribution spatiale.
+Des projections sont faites en comparant des scénarios de traitement des déchets jusqu'en 2080, même si on ne nous donne pas d'information sur les nouvelles constructions considérées. Par ailleurs, la comparaison porte sur la masse, pas l'impact. Donc pas d'analyse de sensibilité réalisée.
+La seule variabilité évoquée est celle non prise en compte de la durée de vie des différents types de bâtiments. Pas d'analyse d'incertitude.
+
+#### Papageorgiou et al, 2024
+
+##### Objectifs et périmètre
+Le modèle d'ACv du métabolisme urbain proposé vise à évaluer les impacts futurs des décisions d'aménagement et d'identifier les secteurs qui sont les contributeurs majeurs de ceux-là. Il s'agit aussi d'évaluer des stratégies d'économie circulaire à l'échelle urbaine. Le système étudié est constitué de tous les flux de matière et d'énergie entrants et sortant du système, et les impacts indirects de ces derniers sont pris en compte par ACV. Tous les secteurs d'activités sont considérés, à l'exception de l'agriculture, foresterie, pêche, de l'industrie manufacturière et des services par manque de données. L'article présente l'application du modèle à une commune moyenne de Suède. Une ACV rétrospective, et une ACV prospective sont réalisées.
+Pas de définition de l'UF (comme dans Goldstein 2013, Garcia Guaita 2018 et Gonzalez-Garcia 2021), mais les impacts sont divisés par la population. Concept de responsabilité totale appliqué aux flux. Des flux jugés mineurs et n'ayant pas de données dans ecoinvent 3.8 (par exemple consommation pharmaceutique) ne sont pas pris en compte, tout comme le stock de la ville, puisque l'étude évalue les impacts annuels. Approche attributionnelle
+
+##### Méthode de construction d'inventaire 
+Les données de MEFA viennent d'un précédent article du même auteur, la même année (_Applying material and energy flow analysis to assess urban metabolism in the context of the circular economy_) et sont établies à partir de statistiques d'échelles urbaines, assez précises sur les questions d'énergies consommées par exemple puisqu'issue du producteur. Données de marché utilisées dès que possible, ce ui fait doublon avec le transport de marchandises compté aussi dans le secteur de transport.
+Pour l'ACV prospective, les combinaisons de deux scénarios d'arrière-plan (SSP2-RCP 6.0 : pas de politique d'atténuation vs SSP2-RCP1.9 : politiques ambitieuses, avec premise) et de trois d'avant-plan (BAU vs réduction de la consommation vs augmentation du recyclage) sont étudiées.
+
+##### Méthode de caractérisation
+Douze indicateurs midpoint de la méthode ReCiPe 2008 (H) ont été utilisé pour pouvoir notamment se comparer aux précédentes études réalisées avec la même. Les indicateurs choisis sont ceux ayant été identifié comme les plus pertinents par les précédentes études.
+
+##### Démarches d'interpretation
+ 
+Analyse de contribution par secteur qui identifie les contributeurs majeurs et les sous-contributeurs à ces derniers. Pas d'analyse d'incertitude, même si un paragraphe est dédié à identifier les sources d'incertitudes dans le modèle. L'étude de différent scénarios pourrait être considéré comme une DSA, mais ce n'est pas annoncé comme une analyse de sensibilité. Les résultats sont comparés à d'autre ville, et l'ordre de grandeur de l'impact sur le changement climatique est le même que les autres études. Pour le reste, les grands écarts sur d'autres impacts sont imaginés dus aux différences inhérentes à ce villes de continents/pays différents.
+
+#### Moisio et al, 2024
+
+##### Objectifs et périmètre
+L'article souhaite étendre le cadre des ACV conséquentielles déjà appliquées aux bâtiments à des une échelle urbaine en intégrant les infrastructures urbaines telles que routes et réseaux, afin de confirmer la réponse usuellement en faveur de la réhabilitation à la question : démolition-construction ou rénovation ?
+Le périmètre de l'ACV dépend des effets de la décision étudiée. Les critères différenciant sont le caractère urbanisé (infrastructuré) de la zone ou non, et si l'on réhabilite, remplace ou construit.
+
+##### Méthode de construction d'inventaire 
+
+
+##### Méthode de caractérisation
+
+
+##### Démarches d'interpretation
+Sans graphe, une analyse de la contribution des phases et des matériaux aux émission
 
 
 
+### Réflexion sur mon modèle
 
-
+A la lecture de Papageorgiu et al, 2024, il me semble pertinent de revenir sur une comparaison des résultats énergie qu'on aurait au ratio, energyplus et relevés, et/ou statistiques d'échelle supérieur, non plus côté conso mais côté producteur haute-tension (RTE). 
+Par ailleurs, on pourrait pour avoir des ratios pas ayant un sens, on pourrait prendre des stats par IRIS, selectionner l'IRIS qui ressemble le plus au programme, dans le même climat et regarder les consos à cette échelle. Leur appliquer un facteur pour prendre en compte une meilleure isolation. Si l'on obtient plusieurs IRIS ressemblants, on pourrait considérer une distribution pour ce ratio avec une distribution uniforme entre  les minimum et maximum.
 
 
 
