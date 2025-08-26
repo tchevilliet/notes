@@ -277,7 +277,7 @@ La méthode EF v3.1 est utilisée ainsi que la méthode de demande cumulée d'é
 
 ##### Démarches d'interpretation 
 
-Les résultats pour Milan sont présentés en tableau oar phase et par élément (analyse de contribution). Les résultats sont comparés à d'autres articles, notamment Trigaux 2020. Une analyse de sensibilité OAT est annoncée dans l'annexe, c'est en fait une DSA au sens d'heijungs sur l'impact de la quantité de béton armé, la nature des isolants considérés et la conductivité des fenêtres sur le gwp, en distinguant le stock entier et les nouvelles constructions. Les résultats (globalement inférieurs à 10% de variations) sont jugés "consistent". Pas d'analyse d'incertitude, mais résultats sur la variabilité intra typologie pour chacun des impacts.
+Les résultats pour Milan sont présentés en tableau par phase et par élément (analyse de contribution). Les résultats sont comparés à d'autres articles, notamment Trigaux 2020. Une analyse de sensibilité OAT est annoncée dans l'annexe, c'est en fait une DSA au sens d'heijungs sur l'impact de la quantité de béton armé, la nature des isolants considérés et la conductivité des fenêtres sur le gwp, en distinguant le stock entier et les nouvelles constructions. Les résultats (globalement inférieurs à 10% de variations) sont jugés "consistent". Pas d'analyse d'incertitude, mais résultats sur la variabilité intra typologie pour chacun des impacts.
 
 
 #### Long et al, 2024
@@ -311,32 +311,60 @@ Douze indicateurs midpoint de la méthode ReCiPe 2008 (H) ont été utilisé pou
 
 ##### Démarches d'interpretation
  
-Analyse de contribution par secteur qui identifie les contributeurs majeurs et les sous-contributeurs à ces derniers. Pas d'analyse d'incertitude, même si un paragraphe est dédié à identifier les sources d'incertitudes dans le modèle. L'étude de différent scénarios pourrait être considéré comme une DSA, mais ce n'est pas annoncé comme une analyse de sensibilité. Les résultats sont comparés à d'autre ville, et l'ordre de grandeur de l'impact sur le changement climatique est le même que les autres études. Pour le reste, les grands écarts sur d'autres impacts sont imaginés dus aux différences inhérentes à ce villes de continents/pays différents.
+Analyse de contribution par secteur qui identifie les contributeurs majeurs et les sous-contributeurs à ces derniers. Pas d'analyse d'incertitude, même si un paragraphe est dédié à identifier les sources d'incertitudes dans le modèle. L'étude de différent scénarios pourrait être considéré comme une DSA, mais ce n'est pas annoncé comme une analyse de sensibilité. Les résultats sont comparés à d'autre ville, et l'ordre de grandeur de l'impact sur le changement climatique est le même que les autres études. Pour le reste, les grands écarts sur d'autres impacts sont imaginés dus aux différences inhérentes à ces villes de continents/pays différents.
 
 #### Moisio et al, 2024
 
 ##### Objectifs et périmètre
 L'article souhaite étendre le cadre des ACV conséquentielles déjà appliquées aux bâtiments à des une échelle urbaine en intégrant les infrastructures urbaines telles que routes et réseaux, afin de confirmer la réponse usuellement en faveur de la réhabilitation à la question : démolition-construction ou rénovation ?
 Le périmètre de l'ACV dépend des effets de la décision étudiée. Les critères différenciant sont le caractère urbanisé (infrastructuré) de la zone ou non, et si l'on réhabilite, remplace ou construit.
+Quatre scénarios vont être comparés : 
+- Deux avec un besoin faible de densification, et donc extension ou démolition/construction;
+- Deux avec un besoin fort de densification, si bien que l'extension maximale possible ne suffit pas et donc extension + viabilisation d'une nouvelle parcelle + construction ou démolition/construction plus dense.
 
 ##### Méthode de construction d'inventaire 
-
+Pour la neuf comme la rénovaton/extension, un archétype est utilisé :
+- celui d'un immeuble résidentiel des années 70 pour la réhabilitation, en ajustant le nombre de niveaux. Des étages identiques sont ajoutés pour modéliser l'extension
+- celui d'une construction "typique" pour le neuf, à savoir un plan de tour carré contenant du studio au T3, avec balcons.
+Les quantités de matières sont obtenues par maquette BIM (ArchiCad) ou tableur rempli manuellement avec surfaces et épaisseurs par exemple pour les revêtements.
+Les consommations d'énergie sont obtenues par simulation pour les bâtiments modélisés en 3D (IDA ICE) et par applicaiton de ratio de consommation de bâtiments similaires sur les dernières années dans la ville en question.
 
 ##### Méthode de caractérisation
-
+Méthode du ministère de l'environnement Finlandais, qui ne caractérise que l'impact sur le changement climatique (C02 data.fi).
 
 ##### Démarches d'interpretation
-Sans graphe, une analyse de la contribution des phases et des matériaux aux émission
-
-
+Sans graphe, une analyse de la contribution des phases et des matériaux aux émissions de GES.
+Pas d'analyse d'incertitudes, qui sont même mises de côtés car similaires dans les scénarios comparés...
+PAs d'analyse de sensibilité.
 
 ### Réflexion sur mon modèle
 
 A la lecture de Papageorgiu et al, 2024, il me semble pertinent de revenir sur une comparaison des résultats énergie qu'on aurait au ratio, energyplus et relevés, et/ou statistiques d'échelle supérieur, non plus côté conso mais côté producteur haute-tension (RTE). 
 Par ailleurs, on pourrait pour avoir des ratios pas ayant un sens, on pourrait prendre des stats par IRIS, selectionner l'IRIS qui ressemble le plus au programme, dans le même climat et regarder les consos à cette échelle. Leur appliquer un facteur pour prendre en compte une meilleure isolation. Si l'on obtient plusieurs IRIS ressemblants, on pourrait considérer une distribution pour ce ratio avec une distribution uniforme entre  les minimum et maximum.
 
+## 25 août 2025
+
+### Lecture articles
+
+#### Dorra et al, 2022
+
+Introduction claire sur une différence entre évaluation territorial-based et consumption-based qui demande à être précis sur les limites du système.
+
+##### Objectifs et périmètre
+L'objectif de l'ACV réalisée est de quantifier l'impact des secteurs du bâtiment résidentiel, de la consommation alimentaire et de la mobilité quotidienne à l'échelle de la ville et d'évaluer les mesures d'atténuation considérées par la personne publique. 
+
+##### Méthode de construction d'inventaire 
+Pour la nourriture, des ratios dépendants de l'âge, du genre et du niveau d'éducation (le sien ou celui des parents) sont appliqués aux populations du cas d'étude. Pour les bâtiments, 14 archétypes ont été modélisés sur Pleiades et les bâtiments de la ville ont été associés à ces derniers par proximité des propriétés thermiques. La durée de vie considérée est de 100 ans Pour les transports, à partir de modèles utilisant des données d'usage des sols et de trafic, les distances parcourues sur une zone du territoire par les habitants pour un mode donnée sont calculées.
+
+##### Méthode de caractérisation
+Douze catégories d'impacts issues de CML2001, deux d'EDIP 2003 et deux endpoints d'eco-indicator 99.
 
 
+##### Démarches d'interpretation
+Les résultats obtenus, notamment venant de la simulation énergétiques sont agrégés à l'échelle de la commune et comparés à des statistiques communales.
+Des analyses de contribution sont réalisées : des secteurs aux indicateurs de changement climatique (44% nourriture, 34% bâtiments, 22% mobilité) de déchets, d'usage des sols (que alimentation) et d'utilisation d'énergie (60% bâtiments, 25% alimentation,15% mobilité) ; des catégories d'aliments et de boissons à la masse de l'inventaire et à l'indicateur de changement climatique.
+Des scénarios de réduction d'impacts sont modélisés (DSA) sur chacun des secteurs, les scénarios pouvant appliquer plusieurs paramètres des modèles (isolation des façades par exemple).
+Pas de mention des incertitudes.
 
 
 
