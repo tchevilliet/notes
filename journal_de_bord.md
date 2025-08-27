@@ -270,7 +270,7 @@ Le but de l'outil présenté est d'évaluer l'impact des bâtiments (anciens ou 
 
 ##### Méthode de construction d'inventaire 
 L'auteur opère une "simplification" l'équation h =CBA-1f en basculant sur h'=A'Q' ou les lignes d'A' sont les éléments de construction (macro-composants par phase) utilisés et les colonnes sont des produits et EF direct utilisés par ces éléments. Les lignes de la matrice Q' sont ces produits et EF, et ses colonnes les catégories d'impact.
-Pour réaliser l'inventaire, des lois empiriques sont établies (polynôme second degré) pour établir la masse de béton armé en fonction du nombre d'étage par exemple. Les quantités de matériaux étant disponibles dans des bases de données. Pour les enveloppes, les quantités de matières sont inférées à partir du U, disponible dans la base évoquée, et du type de bâtiment et des compositions de parois qui lui sont liés. Des donnés moyennes de la littérature sont utilisées pour le transport, l'installation, la démolition/deconstruction et le transpor vers le traitement de fin de vie. ecoinvent 3.9.1 EN15804 est utilisée pour les procédés d'arrière-plan
+Pour réaliser l'inventaire, des lois empiriques sont établies (polynôme second degré) pour établir la masse de béton armé en fonction du nombre d'étage par exemple. Les quantités de matériaux étant disponibles dans des bases de données. Pour les enveloppes, les quantités de matières sont inférées à partir du U, disponible dans la base évoquée, et du type de bâtiment et des compositions de parois qui lui sont liés. Des donnés moyennes de la littérature sont utilisées pour le transport, l'installation, la démolition/deconstruction et le transport vers le traitement de fin de vie. ecoinvent 3.9.1 EN15804 est utilisée pour les procédés d'arrière-plan
 
 ##### Méthode de caractérisation
 La méthode EF v3.1 est utilisée ainsi que la méthode de demande cumulée d'énergie. Chaque flux intermédiaire et élémentaire du système est directement caractérisé dans la matrice Q'.
@@ -346,7 +346,7 @@ Par ailleurs, on pourrait pour avoir des ratios pas ayant un sens, on pourrait p
 
 ### Lecture articles
 
-#### Dorra et al, 2022
+#### Dorr et al, 2022
 
 Introduction claire sur une différence entre évaluation territorial-based et consumption-based qui demande à être précis sur les limites du système.
 
@@ -367,12 +367,43 @@ Des scénarios de réduction d'impacts sont modélisés (DSA) sur chacun des sec
 Pas de mention des incertitudes.
 
 
+## 27 août 2025
+
+### Lecture articles
+
+#### Lausselet et al. 2022
+
+ACV hybride pour l'étude d'un écoquartier norvégien, seulement sur les gazs à effet de serre seulement pour phases de production et de construction.
+
+##### Objectifs et périmètre
+Les buts de l'étude sont d'identifier les contributeurs majeurs de GES dans le quartier et d'identifier les stratégies de réduction des GES au plus gros potentiel. Seuls les matières sont étudiées dans l'article, sans prendre en compte leur fin de vie, mais bien leur remplacement durant la phase d'exploitation des bâtiments (PER de 60 ans)
+
+##### Méthode de construction d'inventaire 
+Les quantités de matières sont considérées disponibles, il reste simplement à les multipliées par les coefficients calculés. Pas de 
+
+##### Méthode de caractérisation
+Seuls les GES sont quantifiés
+Des coefficients hybrides sont calculés pour chaque matière contenu dans chacun des types de bâtiments (13 matières : 4 bétons, des plaques de plâtres, des laines de verres et de roches, de l'isolant polystyrene, de l'acier structurel, du polyethylene, du lamellé-collé, du bois massif tendre). Les coefficients sont construits : 1) en identifiant les process concernés dans ecoinvent, et les secteurs concernés dans EXIOBASE 2) en désagrégeant les secteurs IO en noeuds 3) en identifiant et supprimant tous les noeuds pour lesquels des process ecoinvent existent pour obtenir des coefficients "IO-restant" spécifique aux parties non modélisées par les process 4) en sommant les émissions calculés par process-based et le produit du coefficient IO-restant par le coût.
+Pour réaliser l'ACV du projet, on fait d'abord celle de tout le secteur de la construction en s'appuyant sur ces coefficients, et on déduit le résultat des émissions du secteur de la construction, ce qui donne un coefficient, à l'échelle nationale IO-restant. Les émissions du projet sont alors obtenues en sommant les quantités de matières caractérisées par les coefficients hybrides et le cout de la construction multipliée par le IO-restant.
+
+##### Démarches d'interpretation
+Des analyses de contribution sont réalisées : des phases au score du projet, des matériaux au score du projet, des types de données au score des phases et des matériaux. Les résultats par phase (module) sont comparés à des réusltats de la littérature et un rapport de l'IEA qui a analysé 80 bâtiments. 
+L'erreur de troncature est en moyenne de 90% et de médiane 31%, et est comparée à la littérature. 
+Pas d'analyse d'incertitudes ou de sensibilité, même si celles-ci sont évoquées, pour dire que l'incertitiude sur les prix a été réduite en prenant des données nationales.
 
 
+#### Skaar et al. 2022
+
+##### Objectifs et périmètre
 
 
+##### Méthode de construction d'inventaire 
 
- 
+
+##### Méthode de caractérisation
+
+
+##### Démarches d'interpretation
 
 
 
