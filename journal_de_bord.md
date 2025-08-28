@@ -395,7 +395,7 @@ Pas d'analyse d'incertitudes ou de sensibilité, même si celles-ci sont évoqu�
 #### Skaar et al. 2022
 
 ##### Objectifs et périmètre
-
+L'article vise à réaliser une sorte de cahier des charges d'une base de donnée ACV pour l'échelle quartier permettant de traiter les composants suivants : bâtiments, mobilité, infrastructures, énergie. Une des exigences premières est la capacté de fournir des ICV.
 
 ##### Méthode de construction d'inventaire 
 
