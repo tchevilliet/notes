@@ -405,5 +405,40 @@ L'article vise à réaliser une sorte de cahier des charges d'une base de donné
 
 ##### Démarches d'interpretation
 
+## 1 septembre 2025
+
+### Lecture articles
+
+#### Maranghi et al. 2020
+
+L'article cherche à intégrer dans une modélisation de la ville en système complexe les approches de métabolisme urbain et d'ACV, permettant une évaluation large et détaillée de l'impact des villes.
+Sont évoqués des articles qui proposent des métriques pour l'urban sustainability, voir si et comment les citer dans la partie sur l'éval environnementale des villes : Alberti 2017, Beloin-Saint-Pierre 2017, Huang 2015, Petit-Boix 2017.
+PER de 10 ans dans certaines études MFA, et données dans Kennedy et al. 2015.
+
+L'article montre que l'on pourrait identifier des noeuds de plus ou moins grande importance par l'analyse du graphe de la ville modéliser en système complexe.
+
+
+## 2 septembre 2025
+
+### Lecture articles
+
+#### Hermansdorfer et al. 2024
+
+L'article présente Urban Decarb, outils d'ACV paramétrique pour le développement urbain en interface grasshopper.
+
+##### Objectifs et périmètre
+L'article évoque UF multi-dimensionnelle où les émissions sont exprimées au total, par surface de plancher, et par habitant sur une PER de 50 ou 80 ans.
+Toutes les étapes du cycle de vie sont considérées
+
+##### Méthode de construction d'inventaire 
+Les données viennent d'EPD danoise, puis éventuellement Ökobaudat si nécessaire. Pour les espaces extérieurs, une base de donnée danoise InfraLCA est utilisée. Tozan 2022 est utilisé pour la séquestration carbone.
+Le quartier est modélisé sur grasshopper et les consommations énergétiques sont obtenues via dragonfly (voir comment, plus rapide qu'honeybee ?). Pour les matériaux, extraction directe de la maquette et usage d'analyse structurelle générative (cite Robati et al. 2021), cela semble être des éléments finis... Des coeffcient de remplacement sont considérés pour l'existant.
+Possibilité de prendre en compte les routes et espaces verts.
+
+##### Méthode de caractérisation
+Seul l'indicateur de changement climatique semble évalué par l'outil, même si les sources de données sont au format 15804 et décrivent l'ensemble des impacts de la méthode.
+
+##### Démarches d'interpretation
+Deux cas d'étude présentés avec des comparaisons de scénarios (DSA) et des analyses de contributions des phases aux gwp et une cartographie des émissions carbones par m2 des différents bâtiments et surfaces. Les incertitudes ne sont ni quantifiées, ni qualifiées. Elles sont évoquées pour caractérisées les phases amont de conception (citation de SHARIFI & MURAYAMA 2013, review d'outils d'éval de quartier. Pas d'analyse de sensibilité sauf DSA.
 
 
