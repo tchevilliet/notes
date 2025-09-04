@@ -252,7 +252,7 @@ Les limites identifiées sont : l'usage dans le modèle en temps réel du compor
 Évoque Pfister 2020 en introduction, qui propose un shapefile global pour la régionalisation à venir des ACV. A déjà identifié l'intérêt des ACV dynamiques (DLCA), et décide d'y incorporer un système multi-agent (MAS).
 
 ##### Objectifs et périmètre analyse
-Le but du modèle est l'évaluation dynamique des impacts d'un quartier. Il est annoncé que les impacts considérés sont uniquement ceux ayant lieu dans le périmètre du quartier, mais il a plus l'iar de s'agir d'une étude sur la phase d'usage seulement que d'impacts directs uniquement.
+Le but du modèle est l'évaluation dynamique des impacts d'un quartier. Il est annoncé que les impacts considérés sont uniquement ceux ayant lieu dans le périmètre du quartier, mais il a plus l'air de s'agir d'une étude sur la phase d'usage seulement que d'impacts directs uniquement.
 
 ##### Méthode de construction d'inventaire 
 6 agents participent à déterminer l'inventaire (climat, bâtiment, espaces verts, éclairage, mobilité, individus), avec pour chacun d'eux des attributs, déterminés par des données (par exemple météo), des inputs de l'utilisateur et des règles d'interaction entre attributs d'agents différents. Des "flux élémentaires d'avant-plan" (en fait consommations d'énergies et GES directs) sont calculés à l'instant t, multipliés par une intensité d'émissions par type d'énergie à l'instant t, puis sommé sur l'année. Les captations des espaces verts sont déduites des émissions de CO2 calculées.
