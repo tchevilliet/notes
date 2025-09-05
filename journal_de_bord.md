@@ -292,7 +292,7 @@ Pour chacun des six types de bâtiments (tourisme, résidentiel, public, industr
 Les émissions carbone sont obtenues en multipliant les flux entrants par les facteurs de caractérisation carbone de la (CLCD Database, 2015) et en retranchant l'absorption de carbone par les bâtiments béton.
 
 ##### Démarches d'interpretation 
-Analyse de contribution des types de bâtiments aux masses de décehts, mais pas à l'impact. Visualition (peu lisible) de la distribution spatiale.
+Analyse de contribution des types de bâtiments aux masses de déchets, mais pas à l'impact. Visualisation (peu lisible) de la distribution spatiale.
 Des projections sont faites en comparant des scénarios de traitement des déchets jusqu'en 2080, même si on ne nous donne pas d'information sur les nouvelles constructions considérées. Par ailleurs, la comparaison porte sur la masse, pas l'impact. Donc pas d'analyse de sensibilité réalisée.
 La seule variabilité évoquée est celle non prise en compte de la durée de vie des différents types de bâtiments. Pas d'analyse d'incertitude.
 
