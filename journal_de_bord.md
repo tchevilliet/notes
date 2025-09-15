@@ -418,7 +418,7 @@ PER de 10 ans dans certaines études MFA, et données dans Kennedy et al. 2015.
 L'article montre que l'on pourrait identifier des noeuds de plus ou moins grande importance par l'analyse du graphe de la ville modéliser en système complexe.
 
 
-## 2 septembre 2025
+##2 septembre 2025
 
 ### Lecture articles
 
@@ -440,5 +440,33 @@ Seul l'indicateur de changement climatique semble évalué par l'outil, même si
 
 ##### Démarches d'interpretation
 Deux cas d'étude présentés avec des comparaisons de scénarios (DSA) et des analyses de contributions des phases aux gwp et une cartographie des émissions carbones par m2 des différents bâtiments et surfaces. Les incertitudes ne sont ni quantifiées, ni qualifiées. Elles sont évoquées pour caractérisées les phases amont de conception (citation de SHARIFI & MURAYAMA 2013, review d'outils d'éval de quartier. Pas d'analyse de sensibilité sauf DSA.
+
+
+## 15 septembre 2025
+
+### Archétypes RE2020
+
+Suite du travail décrit précédemment, nous mettons au propre la démarche dans [ce dossier](/home/thibault.chevilliet@enpc.fr/Documents/2509_archteypes_RE2020/).
+Nous réalisons [un script](/home/thibault.chevilliet@enpc.fr/Documents/2509_archteypes_RE2020/BDD_creation.py) succinct de création de la table à partir de laquelle nous allons travailler en fusionnant les données de quantités de matières et les autres champs contenant des informations utilies sur les bâtiments, en jointant par l'identifiant projet ("projet\_id") et l'index bâtiment ("batiment\_index"). Nous ajoutons une colonne de quantités surfaçiques ("quant\_surf") en divisant les colonnes "quantite" et "sref". Nous enregistrons [cette table](/home/thibault.chevilliet@enpc.fr/Documents/2509_archteypes_RE2020/OUT/quantites_augmentees.parquet) au [format parquet](https://parquet.apache.org/docs/overview/motivation/).
+
+Un second script permet la création d'une table d'intensité produits.  Cette table doit renvoyer tous les flux intermédiaires du procédé "1 m2 de tel usage" ("Maison individuelle ou accolée", "Logement collectif", "Bureau", "Enseignement primaire", "Enseignement secondaire (partie jour)") avec pour chacun les paramètres d'une distribution de notre choix, afin de pouvoir créer un archétype statistiquement représentatif de chacun des usages. De nombreuses hypothèses sont nécessaires à cette étape :
+- Quel type de distribution choisir ? Nous commençons par considérer uniqement des distributions log-normale de variables, à la manière d'ecoinvent (cf. Ciroth 2016). Pour cela, nous filtrons par l'usage, et une nomenclature donnée, et nous utilisons la fonction [stats.lognorm.fit](https://docs.scipy.org/doc/scipy/tutorial/stats/continuous.html) du package scipy, qui permet d'estimer les paramètres de la distribution lognormale par la méthode du maximum de vraisemblance.
+- Problème de non unicité des produits par nomenclatures : il se trouve que les nomenclatures dont nous disposons ne pointent pas chacunes vers un seul produit. Ce qui se voit particulièrement sur deux composantes qui vont être a priori importantes pour nous :
+	- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
