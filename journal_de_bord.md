@@ -459,7 +459,8 @@ Un second script permet la création d'une table d'intensité produits.  Cette t
 ####Économie de travail
 
 On pourrait imaginer une manière de pré-remplir des bases de données automatiquement, et il faudrait en fait sélectionner les procédés que l'on sohaite modéliser via un screening. On pourrait s'appuyer sur de la littérature existante, ou bien sur nos précédents modèles.
-Dans un premier temps, on peut simplement se fixer un seuil d'occurence. Par exemple, ne modéliser que les procédés apparaissant plus de x% de 80000 (il y environ 80000 projets).
+Dans un premier temps, on peut simplement se fixer un seuil d'occurence. Par exemple, ne modéliser que les procédés apparaissant plus de x% de 80000 (il y environ 80000 projets). On trace cette courbe [ici](/home/thibault.chevilliet@enpc.fr/Documents/2509_archteypes_RE2020/nb_process_vs_part_projet.png) et on constate qu'il semble possible de modéliser un nombre plus restreint, de l'ordre de 150-200, en se privant uniquement de procédés peu utilisés. Cela reste tout de même une quantité importante de procédés et nous créons donc un script de création de base de données de procédés de matériaux. Celui-ci permet, à partir d'une liste de ce qu'on appelle des produits (définis comme une nomenclature et une unité) de créer un fichier excel pour Brightway où un procédé est créé pour chaque produit, avec quatre échanges : un premier avec lui-même pour le produit de référence, puis trois autres pour trois étapes de vie du bâtiment pour lequel ils vont être employés (production et transport sur site, renouvellement et vie en oeuvre, fin de vie).
+Pour chacun de ces trois derniers échanges, le script prend le nom disponible dans la nomenclature, le traduit en anglais, cherche dans ecoinvent via la fonction search brightway et propose à l'utilisateur la liste de résultats, parmi laquelle il ne reste plus qu'à choisir au clavier.
 
 
 
